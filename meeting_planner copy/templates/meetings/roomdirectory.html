@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Meeting Room Directory</title>
+    </head>
+    <body>
+        <h1>Meeting Room Directory</h1>
+        <ul>
+            {% for room in rooms %}
+                <li>{{ room }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
