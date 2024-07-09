@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from send_files.views import test, main
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("send-files", test),
+    path("send-files/main", main)
+    
 ]
+
