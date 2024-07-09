@@ -5,10 +5,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href = "{% static 'website/style.css' %}">
+    <link rel="stylesheet" href = "{% static 'send_files/style.css' %}">
 </head>
 <body>
-    <p> test</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="id_file">Upload File:</label>
+        {{ form.file }}
+        
+        <label for="id_destination">Destination:</label>
+        {{ form.destination }}
+        
+        <label for="id_mode">Mode:</label>
+        {{ form.mode }}
+        
+        <label for="id_notes">Notes:</label>
+        {{ form.notes }}
+        
+        <button type="submit">Send</button>
+    </form>
+
+
 </body>
 </html>
